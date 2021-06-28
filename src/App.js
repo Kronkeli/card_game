@@ -4,7 +4,7 @@ import Deck from './Deck.jsx';
 function App() {
   return (
     <div className="App">
-      <div class="gameboard">
+      <div className="gameboard">
         <Deck cardsVisible={true} fillDeck={false} />
         <Deck cardsVisible={false} fillDeck={true} />
       </div>

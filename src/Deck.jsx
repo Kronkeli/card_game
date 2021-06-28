@@ -9,7 +9,7 @@ class Deck extends React.Component {
 
         // Create all cards
         var allCards = [];
-        for (var value = 0; value < 13; value++) {
+        for (var value = 1; value < 13; value++) {
             for (var suit = 0; suit < 4; suit++) {
                 let card = { value: value, suit: suit }
                 allCards.push(card);
@@ -29,9 +29,6 @@ class Deck extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.state = { cardsVisible: Boolean(props.cardsVisible) };
-        // this.state = { cards: [] };
-        // this.state = { cards: this.shuffleDeck() };
 
         var cards = [];
         if (props.fillDeck === true) {
@@ -54,20 +51,20 @@ class Deck extends React.Component {
     }
 
     handleClick() {
-        this.setState(prevState => ({
-            showCard: true
+        var newList = this.state.cards;
+        newList.pop();
+        this.setState(() => ({
+            showCard: true,
+            cards: newList
         }));
-        console.log("Painettu");
     }
 
     render() {
 
         var cardsVisible = this.state.cardsVisible;
-        console.log("totuusarvomme on " + String(cardsVisible));
         if (cardsVisible === true) {
-            console.log("nyt vittu");
             if (this.state.cards.length === 0) {
-                return (<div class="deck"></div>)
+                return (<div className="deck"></div>)
             }
             else {
                 // const top_card = this.state.cards[this.state.cards.length];
@@ -78,33 +75,33 @@ class Deck extends React.Component {
             }
         }
         else {
-            const cardList = this.state.cards.map((element) =>
-                <li> Täältä tulee maa {element.suit} ja arvo {element.value}  </li>
+            const cardList = this.state.cards.map((element, index) =>
+                <li key={index}> Täältä tulee maa {element.suit} ja arvo {element.value}  </li>
             )
             if (this.state.showCard === false) {
                 return (
                     <div>
-                        <img class="deck" onClick={this.handleClick} src={green_back} alt="green_back" />
+                        <img className="deck" onClick={this.handleClick} src={green_back} alt="green_back" />
                     </div>
                 )
             }
             else {
                 if (this.state.cards.length !== 0) {
-                    let top_card = this.state.cards.pop();
+                    // let top_card = this.state.cards.pop();
+                    let length = this.state.cards.length;
+                    let top_card = this.state.cards[length-1];
                     return (
                         <div>
-                            <div class="deck" onClick={this.handleClick}>
+                            <div className="deck" onClick={this.handleClick}>
                                 <Card value={top_card.value} suit={top_card.suit} />
                             </div>
-                            <ui>
-                                {cardList}
-                            </ui>
+                            <div>Kortteja jäljellä: {length}</div>
                         </div>
                     )
                 }
                 else {
                     return (
-                        <div class="deck"></div>
+                        <div className="deck"></div>
                     )
                 }
 

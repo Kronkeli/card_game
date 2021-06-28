@@ -38,11 +38,7 @@
 }
 
 .gameboard {
-  margin-top: 20vh;
   display: flex;
   justify-content: center;
-  width: 50vw;
-  align-items: center;
-  position: absolute;
-  left: 25vw;
+  align-items: flex-start;
 }
