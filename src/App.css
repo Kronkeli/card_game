@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +35,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.gameboard {
+  margin-top: 20vh;
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+  align-items: center;
+  position: absolute;
+  left: 25vw;
 }

@@ -1,0 +1,10 @@
+.deck {
+    height: 30vw;
+    width: 20vw;
+    padding: 0.1rem;
+    border-style: solid;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
