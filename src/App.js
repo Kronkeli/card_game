@@ -5,8 +5,7 @@ function App() {
   return (
     <div className="App">
       <div className="gameboard">
-        <Deck cardsVisible={true} fillDeck={false} />
-        <Deck cardsVisible={false} fillDeck={true} />
+        <Deck fillDeck={true} />
       </div>
     </div>
   );

@@ -1,7 +1,27 @@
-.deck {
-    height: 30vw;
-    width: 20vw;
+.cardArea {
+    height: 60vh;
+    width: 40vh;
     padding: 0.1rem;
+    display: grid;
+    margin: 1vh;
+}
+
+.deck {
+    height: 60vh;
+    width: 40vh;
+}
+
+.topCard {
+    height: 60vh;
+    width: 40vh;
+    margin-top: -56vh;
+}
+
+.textOrButton {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: lightgrey;
+    border-radius: 1rem;
     border-style: solid;
-    margin: 1rem;
+    border-width: 0.15rem;
 }
